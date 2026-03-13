@@ -67,6 +67,11 @@ export default function Portfolio() {
   useEffect(() => {
   const elements = document.querySelectorAll(".scroll-reveal");
 
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach(el => el.classList.add("revealed"));
+    return;
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -75,7 +80,7 @@ export default function Portfolio() {
         }
       });
     },
-    { threshold: 0.2 }
+    { threshold: 0.1 }
   );
 
   elements.forEach((el) => observer.observe(el));
@@ -86,11 +91,11 @@ export default function Portfolio() {
   return (
     <>
       
-      <section className="bg-dark text-white min-h-screen py-28">
+      <section className="bg-dark text-white min-h-screen pt-24 pb-16 md:py-28">
 
-        <div className="max-w-7xl mx-auto px-6 scroll-reveal">
+        <div className="max-w-7xl mx-auto px-6 ">
 {/* INTRO SECTION */}
-<div className="text-center mb-32">
+<div className="text-center mb-32 scroll-reveal">
   <p className="uppercase tracking-widest text-sm text-gray-400 mb-4">
     Video Editing Portfolio
   </p>
@@ -136,7 +141,7 @@ export default function Portfolio() {
 /* CATEGORY SECTION */
 function CategorySection({ title, items, onVideoClick }) {
   return (
-    <div className="mb-28">
+    <div className="mb-28 scroll-reveal">
 
 <div className="text-center mb-12">
   <h2 className="text-2xl md:text-3xl font-semibold mb-3">

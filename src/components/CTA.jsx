@@ -19,12 +19,12 @@ export default function CTA() {
   Contact us 
 </Link>
 
-          <a
-            href="/portfolio"
+          <Link
+            to="/portfolio"
             className="border border-white/20 hover:border-white/40 transition px-8 py-3 rounded-md text-white"
           >
             View Our Work
-          </a>
+          </Link>
         </div>
 
       </div>

@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 export default function Front() {
   return (
     <section className=" min-h-[90vh] flex items-center">
@@ -23,19 +26,19 @@ export default function Front() {
 
         {/* CTA */}
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="bg-blue-600 hover:bg-blue-500 transition text-white px-8 py-3 rounded-md font-medium"
           >
             Get in Touch!
-          </a>
+          </Link>
 
-          <a
-            href="/portfolio"
+          <Link
+            to="/portfolio"
             className="border border-white/15 hover:border-white/30 transition px-8 py-3 rounded-md text-white"
           >
             View Our Work
-          </a>
+          </Link>
         </div>
 
       </div>
